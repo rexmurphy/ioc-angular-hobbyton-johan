@@ -1,7 +1,37 @@
 # IocAngularHobbytonJohan
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+## Title
+ioc-angular-hobbyton-johan
 
+## Description
+This app will manage everything related to my board game group’s sessions  
+(catalog of our board games, game session records, meetup scheduling, campaign tracking, etc.)
+
+## Technical Stack
+[Angular CLI](https://github.com/angular/angular-cli) version 18.2.21 with:
+
+- Standalone architecture (no `app.module.ts`)
+- Routing enabled
+- SCSS as the styling preprocessor
+- Client-Side Rendering (CSR) enabled
+- Server-Side Rendering (SSR) disabled
+- Node.js and npm for dependency management
+- Git for version control
+- GitHub as the remote repository: https://github.com/rexmurphy/ioc-angular-hobbyton-johan
+
+## Status
+The Angular 18 project has been successfully created using the Standalone architecture, with routing enabled and SCSS configured as the default styling format.  
+Client-Side Rendering (CSR) is configured, with Server-Side Rendering (SSR) disabled as required.  
+Version control has been properly initialized using Git, and all required branches (`main`, `ra1-setup`, `ra2-components`, `ra3-serveis`, `ra4-navegacio`) have been created.
+
+Additionally, the project structure has been manually organized inside `src/app/` by creating the following directories:
+- components/ (for reusable UI components)
+- services/ (for data and business logic)
+- models/ (for TypeScript interfaces and data models)
+- pages/ (for main application views)
+
+`.gitkeep` files have been added where necessary to ensure empty directories are properly tracked under version control.
+ 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
