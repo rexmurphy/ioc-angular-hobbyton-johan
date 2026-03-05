@@ -10,4 +10,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'ioc-angular-hobbyton-johan';
+
+  constructor(){
+    console.log("Hobbyton app successfully initialized");
+  }
 }
