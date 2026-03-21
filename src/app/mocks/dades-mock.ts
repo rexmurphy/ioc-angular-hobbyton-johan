@@ -1,0 +1,93 @@
+import { Element} from '../models/element.model';
+
+
+export const ELEMENT_MOCK: Element[]=[
+    {
+        id: 1,
+        name: "Brass Birmingham",
+        category: "euro",
+        minPlayers: 2,
+        maxPlayers: 4,
+        summary: "juego de estrategia económica que narra la historia de empresarios de Birmingham entre 1770-1870",
+
+    },
+    {
+        id: 2,
+        name: "Great Western Trail Argentina",
+        category: "euro",
+        minPlayers: 1,
+        maxPlayers:4,
+        summary: "juego de gestión de tu empresa de venta de ganado que llevarás por las pampas hasta Buenos aires",
+        playHistory: ["2025/12/12: Carlos"]
+    },
+
+    {
+        id:3,
+        name: "Barrage",
+        category:"euro",
+        minPlayers: 1,
+        maxPlayers:4,
+        summary: "Juego de gestión de recursos de construcción de presas para generar energía",
+        playHistory: ["2026/03/3: Manel"]
+    },
+    {
+        id:4,
+        name:"Gaia Project",
+        category: "euro",
+        minPlayers: 1,
+        maxPlayers: 4,
+        summary:"Juego de colonización espacial en el que las facciones deben terraformar planetas para habitarlos y expandir sus dominios",
+        playHistory: ["2025/12/15: Johan"]
+    },
+    {
+        id: 5,
+        name: "Wroth",
+        category: "control de area",
+        minPlayers:1,
+        maxPlayers:4,
+        summary: "Juego de control de area con facciones asimétricas",
+        playHistory:["2026/01/30: Carlos"]
+    },
+    {
+        id:6,
+        name: "Pagan",
+        category:"versus",
+        minPlayers:2,
+        maxPlayers:2,
+        summary:"Juego de cartas de deducción en el que una buja lucha contra su cazador",
+        playHistory:["2026/02/05:Johan"]
+    },
+    {
+        id:7,
+        name:"Legacy of Yu",
+        category:"solitario",
+        minPlayers:1,
+        maxPlayers:1,
+        summary:"Juego de campaña no lineal rejubable de gestión de recursos en el ue deberas construir un canal, mientras contruyes tu ciudad y te defiendes de los barbaros"
+    },
+    {
+        id:8,
+        name:"Dice Throne Adventures",
+        category:"Dungeon Crawler",
+        minPlayers:1,
+        maxPlayers:4,
+        summary:"Juego de campañas en el deberás vencer ir venciendo a tus enemigos hasta enfrentarte al jege final: The Mad KIng"
+    },
+    {
+        id:9,
+        name:"Fabulas de Peluche",
+        category:"Dungeon Crawler",
+        minPlayers:1,
+        maxPlayers:4,
+        summary:"juego en el que te convertirás en los peluches que defenderán a una niña mientras está dormida"
+    },
+    {
+        id:10,
+        name:"Bunny Kingdom",
+        category: "control de area",
+        minPlayers:2,
+        maxPlayers:4,
+        summary:"juego en el que crearas tu reino de conejitos contruyendo ciudades y reuniendo recursos"
+    }
+
+]
