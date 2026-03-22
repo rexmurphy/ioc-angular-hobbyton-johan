@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-barra-cerca',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './barra-cerca.component.scss'
 })
 export class BarraCercaComponent {
+  @Output() searchEvent =new EventEmitter<string>();
 
+  onSearch(value: string){
+    this.searchEvent.emit(value);
+
+  }
 }

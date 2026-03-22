@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {Element} from '../../models/element.model';
 
 @Component({
   selector: 'app-targeta-element',
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './targeta-element.component.scss'
 })
 export class TargetaElementComponent {
+  @Input() game!:Element;
 
+  formatPlayers(game:Element):string{
+    if(game.minPlayers===game.maxPlayers){
+      return `${game.minPlayers} jugador/es`
+    }
+    return `${game.minPlayers} - ${game.maxPlayers} jugadores`
+  }
 }

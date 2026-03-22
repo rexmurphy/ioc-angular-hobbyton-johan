@@ -1,1 +1,9 @@
-<p>barra-cerca works!</p>
+<div class="search-container">
+  <input 
+    type="text" 
+    #txtSearch
+    (input)="onSearch(txtSearch.value)" 
+    placeholder="Busca un juego de la lista..."
+    class="search-input"
+  >
+</div>

@@ -1,1 +1,24 @@
-<p>targeta-element works!</p>
+
+<div  class="game-card">
+    <h3>{{game.name}}</h3>
+    <p><strong>Categoria: </strong> {{game.category}}</p>
+    <p><strong>Descripción: </strong>{{game.summary}}</p>
+    <p><strong>Número de jugadores: </strong> {{formatPlayers(game)}}</p>
+    @if (game.playHistory && game.playHistory.length > 0) {
+        <div class="play-history">
+            <strong>Victorias:</strong>
+            <ul>
+            @for (session of game.playHistory.slice(-2); track $index) {
+                <li>{{ session }}</li>
+            }
+            </ul>
+                
+            @if (game.playHistory.length > 2) {
+            <small>... y {{ game.playHistory.length - 2 }} más</small>
+            }
+        </div>
+    }
+        
+</div>
+
+
