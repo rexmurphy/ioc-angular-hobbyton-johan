@@ -4,13 +4,13 @@ import { Element } from '../../models/element.model';
 import { ELEMENT_MOCK } from '../../mocks/dades-mock';
 
 @Component({
-  selector: 'app-games-list',
+  selector: 'app-llista-elements',
   standalone: true,
   imports: [NgForOf],
-  templateUrl: './games-list.component.html',
-  styleUrl: './games-list.component.scss'
+  templateUrl: './llista-elements.component.html',
+  styleUrl: './llista-elements.component.scss'
 })
-export class GamesListComponent {
+export class LlistaElementsComponent {
   gameList:  Element[]=[];
 
   ngOnInit(): void{
