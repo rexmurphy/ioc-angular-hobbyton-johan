@@ -1,7 +1,13 @@
 <app-barra-cerca (searchEvent)="handleSearch($event)"></app-barra-cerca>
 
-<div class="contenedor-grid">
-    @for (game of filteredGames; track game.id){
-        <app-targeta-element [game]="game"></app-targeta-element>
-    }
+
+<div *ngIf="filteredGames.length===0" class="empty-message">
+    <p>No se ha encontrado ningún juego</p>
+</div>
+<div class="contenedor-grid" *ngIf="filteredGames.length > 0">
+    <app-targeta-element
+        *ngFor ="let game of filteredGames; trackBy: trackByGameId" [game]="game">
+    </app-targeta-element>
+    
+    
 </div>

@@ -24,5 +24,9 @@ export class LlistaElementsComponent implements OnInit{
   handleSearch(text: string){
     this.filteredGames=this.allGames.filter(g=> g.name.toLocaleLowerCase().includes(text.toLocaleLowerCase()))
   }
+
+  trackByGameId(index:number,game:Element):number{
+    return game.id;
+  }
 }
 
