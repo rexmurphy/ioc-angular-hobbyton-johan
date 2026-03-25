@@ -1,9 +1,20 @@
-<div class="search-container">
-  <input 
-    type="text" 
-    #txtSearch
-    (input)="onSearch(txtSearch.value)" 
-    placeholder="Busca un juego de la lista..."
-    class="search-input"
-  >
-</div>
+<form #searchForm="ngForm" (ngSubmit)="onSearch()" novalidate>
+  <div class="search-group">
+    <input
+    type="text"
+    name="search"
+    [(ngModel)]="searchTerm"
+    required
+    minlength="3"
+    #searchModel="ngModel"
+    placeholder="Busca un juego de mi lista"
+    (input)="onSearch()"
+    >
+    
+    <div *ngIf="searchModel.invalid && (searchModel.dirty || searchModel.touched)" class="error-msg">
+      <small *ngIf="searchModel.errors?.['minlength']">Introduce al menos tres letras</small>
+      <small *ngIf="searchModel.errors?.['required']">El campo no puede estar vacío</small>
+    </div>
+    <button type="submit" [disabled]="searchForm.invalid">Busca un juego</button>
+  </div>
+</form>
