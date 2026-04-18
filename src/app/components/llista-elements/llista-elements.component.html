@@ -1,13 +1,34 @@
 <app-barra-cerca (searchEvent)="handleSearch($event)"></app-barra-cerca>
 
 
-<div *ngIf="filteredGames.length===0" class="empty-message">
-    <p>No se ha encontrado ningún juego</p>
+@if (elementService.carregant()){
+<div style="text-align: center; padding: 20px;">
+    <div class="spinner"></div>
+    <h2>Cargando juegos... ⏳</h2>
 </div>
-<div class="contenedor-grid" *ngIf="filteredGames.length > 0">
-    <app-targeta-element
-        *ngFor ="let game of filteredGames; trackBy: trackByGameId" [game]="game">
-    </app-targeta-element>
-    
-    
+}
+
+@if(elementService.error()){
+<div style="text-align: center; padding: 20px;">
+    <h2>
+        ❌ {{elementService.error()}}
+    </h2>
+    <button (click)="tryAgain()">Reintentar</button>
 </div>
+}
+
+@if(!elementService.carregant() && !elementService.error()){
+@if(elementService.elements().length === 0){
+<div style="text-align: center; padding: 20px;">
+    <h2>No se encontraron juegos 🔍</h2>
+</div>
+}
+
+@if(elementService.elements().length > 0){
+<div class="contenedor-grid">
+    @for (game of elementService.elements(); track game.id) {
+    <app-targeta-element [game]="game"></app-targeta-element>
+    }
+</div>
+}
+}
