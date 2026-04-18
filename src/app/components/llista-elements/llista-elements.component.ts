@@ -2,8 +2,8 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TargetaElementComponent } from '../targeta-element/targeta-element.component';
 import { BarraCercaComponent } from '../barra-cerca/barra-cerca.component';
-import { Element } from '../../models/element.model';
-import { ELEMENT_MOCK } from '../../mocks/dades-mock';
+import { ElementCataleg } from '../../models/element.model';
+//import { ELEMENT_MOCK } from '../../mocks/dades-mock';
 import { ElementService } from '../../services/element.service';
 
 
@@ -37,8 +37,7 @@ export class LlistaElementsComponent implements OnInit {
     }
   }
 
-  trackByGameId(index: number, game: Element): number {
+  trackByGameId(index: number, game: ElementCataleg): string {
     return game.id;
   }
 }
-

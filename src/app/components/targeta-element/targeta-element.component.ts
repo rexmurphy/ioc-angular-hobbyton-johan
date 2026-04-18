@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UpperCasePipe, CommonModule } from '@angular/common';
-import {Element} from '../../models/element.model';
+import { ElementCataleg } from '../../models/element.model';
 
 @Component({
   selector: 'app-targeta-element',
@@ -10,12 +10,12 @@ import {Element} from '../../models/element.model';
   styleUrl: './targeta-element.component.scss'
 })
 export class TargetaElementComponent {
-  @Input() game!:Element;
+  @Input() game!: ElementCataleg;
 
-  formatPlayers(game:Element):string{
-    if(game.minPlayers===game.maxPlayers){
-      return `${game.minPlayers} jugador/es`
+  formatPlayers(game: ElementCataleg): string {
+    if (game.minJugadors === game.maxJugadors) {
+      return `${game.minJugadors} jugador/es`
     }
-    return `${game.minPlayers} - ${game.maxPlayers} jugadores`
+    return `${game.minJugadors} - ${game.maxJugadors} jugadores`
   }
 }

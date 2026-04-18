@@ -2,117 +2,132 @@
     "elements": [
         {
             "id": 1,
-            "name": "Brass Birmingham",
-            "category": "euro",
-            "minPlayers": 2,
-            "maxPlayers": 4,
-            "summary": "juego de estrategia económica que narra la historia de empresarios de Birmingham entre 1770-1870"
+            "nom": "Brass Birmingham",
+            "categoria": "euro",
+            "minJugadors": 2,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/x3zxjr-Vw5iU4yDPg70Jgw__itemrep/img/giNUMut4HAl-zWyQkGG0YchmuLI=/fit-in/246x300/filters:strip_icc()/pic3490053.jpg",
+            "descripcio": "juego de estrategia económica que narra la historia de empresarios de Birmingham entre 1770-1870",
+            "popular": true,
+            "preu": 70,
+            "stock": 1
         },
         {
             "id": 2,
-            "name": "Great Western Trail Argentina",
-            "category": "euro",
-            "minPlayers": 1,
-            "maxPlayers": 4,
-            "summary": "juego de gestión de tu empresa de venta de ganado que llevarás por las pampas hasta Buenos aires",
-            "playHistory": [
+            "nom": "Great Western Trail Argentina",
+            "categoria": "euro",
+            "minJugadors": 1,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/qPNWng17gy-ghltZfNcBwA__itemrep/img/l3aoTZjXDimM7z2OBs2eqQMSmbc=/fit-in/246x300/filters:strip_icc()/pic6893215.png",
+            "descripcio": "juego de gestión de tu empresa de venta de ganado que llevarás por las pampas hasta Buenos aires",
+            "arxiu": [
                 "2025/12/12: Carlos"
-            ]
+            ],
+            "preu": 50,
+            "stock": 1
         },
         {
             "id": 3,
-            "name": "Barrage",
-            "category": "euro",
-            "minPlayers": 1,
-            "maxPlayers": 4,
-            "summary": "Juego de gestión de recursos de construcción de presas para generar energía",
-            "playHistory": [
+            "nom": "Barrage",
+            "categoria": "euro",
+            "minJugadors": 1,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/jEPmWvvYpqkWrKOzqIHFsg__itemrep/img/-s65MFZDOx3Uf0Ec8Nol2nTBl5g=/fit-in/246x300/filters:strip_icc()/pic4336469.png",
+            "descripcio": "Juego de gestión de recursos de construcción de presas para generar energía",
+            "arxiu": [
                 "2026/03/3: Manel"
             ],
-            "popular": true
+            "popular": true,
+            "preu": 70,
+            "stock": 1
         },
         {
             "id": 4,
-            "name": "Gaia Project",
-            "category": "euro",
-            "minPlayers": 1,
-            "maxPlayers": 4,
-            "summary": "Juego de colonización espacial en el que las facciones deben terraformar planetas para habitarlos y expandir sus dominios",
-            "playHistory": [
+            "nom": "Gaia Project",
+            "categoria": "euro",
+            "minJugadors": 1,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/hGWFm3hbMlCDsfCsauOQ4g__itemrep/img/MNyaVUlEsVQmbv3nObPl0SEd_TI=/fit-in/246x300/filters:strip_icc()/pic5375625.png",
+            "descripcio": "Juego de colonización espacial en el que las facciones deben terraformar planetas para habitarlos y expandir sus dominios",
+            "arxiu": [
                 "2025/12/15: Johan"
-            ]
+            ],
+            "popular": true,
+            "preu": 60,
+            "stock": 1
         },
         {
             "id": 5,
-            "name": "Wroth",
-            "category": "control de area",
-            "minPlayers": 1,
-            "maxPlayers": 4,
-            "summary": "Juego de control de area con facciones asimétricas",
-            "playHistory": [
+            "nom": "Wroth",
+            "categoria": "control de area",
+            "minJugadors": 1,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/pF07bElBCzBj1en-zTwFtQ__itemrep/img/8ZTgG4H4fdP8plug9g3oRhJpbuc=/fit-in/246x300/filters:strip_icc()/pic8978903.jpg",
+            "descripcio": "Juego de control de area con facciones asimétricas",
+            "arxiu": [
                 "2026/01/30: Carlos"
             ],
-            "popular": true
+            "popular": true,
+            "preu": 70,
+            "stock": 1
         },
         {
             "id": 6,
-            "name": "Pagan",
-            "category": "versus",
-            "minPlayers": 2,
-            "maxPlayers": 2,
-            "summary": "Juego de cartas de deducción en el que una buja lucha contra su cazador",
-            "playHistory": [
+            "nom": "Pagan",
+            "categoria": "versus",
+            "minJugadors": 2,
+            "maxJugadors": 2,
+            "imatge": "https://cf.geekdo-images.com/UReUHUg3rKE0JkB2InwMfg__itemrep/img/94cmgUC5FcK5Mfo1fsrKFmRMVCw=/fit-in/246x300/filters:strip_icc()/pic8063277.png",
+            "descripcio": "Juego de cartas de deducción en el que una buja lucha contra su cazador",
+            "arxiu": [
                 "2026/02/05:Johan"
-            ]
+            ],
+            "preu": 40,
+            "stock": 1
         },
         {
             "id": 7,
-            "name": "Legacy of Yu",
-            "category": "solitario",
-            "minPlayers": 1,
-            "maxPlayers": 1,
-            "summary": "Juego de campaña no lineal rejubable de gestión de recursos en el ue deberas construir un canal, mientras contruyes tu ciudad y te defiendes de los barbaros"
+            "nom": "Legacy of Yu",
+            "categoria": "solitario",
+            "minJugadors": 1,
+            "maxJugadors": 1,
+            "imatge": "https://cf.geekdo-images.com/cVE1FZQR3gqdlAmehJpaBw__itemrep/img/SZG1o9vZVAk6T2oYDlA1uN6RLGw=/fit-in/246x300/filters:strip_icc()/pic6630422.png",
+            "descripcio": "Juego de campaña no lineal rejubable de gestión de recursos en el ue deberas construir un canal, mientras contruyes tu ciudad y te defiendes de los barbaros",
+            "preu": 50,
+            "stock": 1
         },
         {
             "id": 8,
-            "name": "Dice Throne Adventures",
-            "category": "Dungeon Crawler",
-            "minPlayers": 1,
-            "maxPlayers": 4,
-            "summary": "Juego de campañas en el deberás vencer ir venciendo a tus enemigos hasta enfrentarte al jege final: The Mad KIng"
+            "nom": "Dice Throne Adventures",
+            "categoria": "Dungeon Crawler",
+            "minJugadors": 1,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/kZ9S1yzOdBuftKjgbNzrbA__itemrep/img/aQxFy55lqcjchKmpicamEbE1Ed8=/fit-in/246x300/filters:strip_icc()/pic5944413.jpg",
+            "descripcio": "Juego de campañas en el deberás vencer ir venciendo a tus enemigos hasta enfrentarte al jege final: The Mad KIng",
+            "preu": 70,
+            "stock": 1
         },
         {
             "id": 9,
-            "name": "Fabulas de Peluche",
-            "category": "Dungeon Crawler",
-            "minPlayers": 1,
-            "maxPlayers": 4,
-            "summary": "juego en el que te convertirás en los peluches que defenderán a una niña mientras está dormida"
+            "nom": "Fabulas de Peluche",
+            "categoria": "Dungeon Crawler",
+            "minJugadors": 1,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/CS83e1WOA5WMc4izRw6zwg__itemrep/img/c0tknkGbz4yq8wb2Abysj6hKd_k=/fit-in/246x300/filters:strip_icc()/pic3708878.jpg",
+            "descripcio": "juego en el que te convertirás en los peluches que defenderán a una niña mientras está dormida",
+            "preu": 60,
+            "stock": 1
         },
         {
             "id": 10,
-            "name": "Bunny Kingdom",
-            "category": "control de area",
-            "minPlayers": 2,
-            "maxPlayers": 4,
-            "summary": "juego en el que crearas tu reino de conejitos contruyendo ciudades y reuniendo recursos",
-            "popular": true
-        },
-        {
-            "id": 11,
-            "name": "Terraforming Mars",
-            "category": "euro",
-            "minPlayers": 1,
-            "maxPlayers": 5,
-            "summary": "juego en el que crearás tu imperio interplanetario colonizando Marte"
-        },
-        {
-            "id": 12,
-            "name": "Gloomhaven",
-            "category": "cooperativo",
-            "minPlayers": 1,
-            "maxPlayers": 4,
-            "summary": "juego de aventuras en el que deberás completar misiones y explorar un mundo en constante cambio"
+            "nom": "Bunny Kingdom",
+            "categoria": "control de area",
+            "minJugadors": 2,
+            "maxJugadors": 4,
+            "imatge": "https://cf.geekdo-images.com/Noz8-u1ba828WUv69pTXKg__itemrep/img/EwNAAUagulHIXWq2Jfj4EnyRO2k=/fit-in/246x300/filters:strip_icc()/pic3613444.jpg",
+            "descripcio": "juego en el que crearas tu reino de conejitos contruyendo ciudades y reuniendo recursos",
+            "preu": 60,
+            "stock": 1
         }
     ]
 }

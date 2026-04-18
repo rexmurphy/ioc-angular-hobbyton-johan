@@ -1,9 +1,10 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environments';
-import { Element } from '../models/element.model';
-import { tap, catchError } from 'rxjs/operators';
+import { ElementCataleg, ElementApiResponse } from '../models/element.model';
+import { tap, catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { adaptarElementsApi } from '../adaptadors/element.adaptador';
 
 
 @Injectable({
@@ -18,7 +19,7 @@ export class ElementService {
 
     //Private Signals
 
-    private readonly _elements = signal<Element[]>([]);
+    private readonly _elements = signal<ElementCataleg[]>([]);
     private readonly _carregant = signal<boolean>(false);
     private readonly _error = signal<string>("");
 
@@ -38,8 +39,9 @@ export class ElementService {
 
         //Make petition
 
-        this.http.get<Element[]>(`${this.apiUrl}/elements?popular=true`)
+        this.http.get<ElementApiResponse[]>(`${this.apiUrl}/elements?popular=true`)
             .pipe(
+                map((dades) => adaptarElementsApi(dades)),
                 //try
                 tap((dades) => {
                     this._elements.set(dades);
@@ -65,8 +67,9 @@ export class ElementService {
 
         //Make petition
 
-        this.http.get<Element[]>(`${this.apiUrl}/elements?name_like=${terme}`)
+        this.http.get<ElementApiResponse[]>(`${this.apiUrl}/elements?nom_like=${terme}`)
             .pipe(
+                map((dades) => adaptarElementsApi(dades)),
                 //try
                 tap((dades) => {
                     this._elements.set(dades);
