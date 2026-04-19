@@ -1,14 +1,14 @@
 <app-barra-cerca (searchEvent)="handleSearch($event)"></app-barra-cerca>
 
 
-@if (elementService.carregant()){
+@if (elementService.estat() === 'carregant'){
 <div style="text-align: center; padding: 20px;">
     <div class="spinner"></div>
     <h2>Cargando juegos... ⏳</h2>
 </div>
 }
 
-@if(elementService.error()){
+@if(elementService.estat() === 'error'){
 <div style="text-align: center; padding: 20px;">
     <h2>
         ❌ {{elementService.error()}}
@@ -17,7 +17,7 @@
 </div>
 }
 
-@if(!elementService.carregant() && !elementService.error()){
+@if(elementService.estat() === 'exit'){
 @if(elementService.elements().length === 0){
 <div style="text-align: center; padding: 20px;">
     <h2>No se encontraron juegos 🔍</h2>

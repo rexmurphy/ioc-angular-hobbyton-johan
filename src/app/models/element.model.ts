@@ -27,6 +27,14 @@ export interface ElementCataleg {
     unitats: number;
 }
 
+export type EstatServei = 'inicial' | 'carregant' | 'exit' | 'error';
+
+export interface EstatElements {
+    estat: EstatServei;
+    elements: ElementCataleg[];
+    error?: string;
+}
+
 // export interface Element{
 //     id:number
 //     name:string
