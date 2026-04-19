@@ -1,21 +1,21 @@
 import { Component, Input } from '@angular/core';
-import { UpperCasePipe, CommonModule } from '@angular/common';
+import { UpperCasePipe, CommonModule, DecimalPipe } from '@angular/common';
 import { ElementCataleg } from '../../models/element.model';
 
 @Component({
   selector: 'app-targeta-element',
   standalone: true,
-  imports: [UpperCasePipe],
+  imports: [CommonModule, DecimalPipe],
   templateUrl: './targeta-element.component.html',
   styleUrl: './targeta-element.component.scss'
 })
 export class TargetaElementComponent {
-  @Input() game!: ElementCataleg;
+  @Input({ required: true }) game!: ElementCataleg;
 
   formatPlayers(game: ElementCataleg): string {
     if (game.minJugadors === game.maxJugadors) {
-      return `${game.minJugadors} jugador/es`
+      return `${game.minJugadors}`;
     }
-    return `${game.minJugadors} - ${game.maxJugadors} jugadores`
+    return `${game.minJugadors} - ${game.maxJugadors}`;
   }
 }

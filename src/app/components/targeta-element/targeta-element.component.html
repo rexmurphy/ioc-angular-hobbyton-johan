@@ -1,24 +1,25 @@
-<div class="game-card">
-    <h3>{{game.titol | uppercase}}</h3>
-    <img src="{{game.imatgeUrl}}" alt="{{game.titol}}">
-    <p><strong>Categoria: </strong> {{game.categoria}}</p>
-    <p><strong>Descripción: </strong>{{game.descripcio}}</p>
-    <p><strong>Número de jugadores: </strong> {{formatPlayers(game)}}</p>
-    <p><strong>Precio: </strong> {{game.preu}}</p>
-    <p><strong>Stock: </strong> {{game.unitats}}</p>
-    @if (game.arxiu && game.arxiu.length > 0) {
-    <div class="play-history">
-        <strong>Victorias:</strong>
-        <ul>
-            @for (session of game.arxiu.slice(-2); track $index) {
-            <li>{{ session }}</li>
-            }
-        </ul>
+<div class="element-card">
+    <img [src]="game.imatgeUrl" [alt]="game.titol" class="element-imatge">
+    <div class="element-info">
+        <h3 class="element-nom">{{ game.titol }}</h3>
+        <p class="element-categoria">{{ game.categoria }}</p>
+        <p class="element-descripcio">{{ game.descripcio }}</p>
+        
+        <div class="element-detalls">
+            <p><strong>Jugadors:</strong> {{ formatPlayers(game) }}</p>
+            <div class="play-history" *ngIf="game.arxiu && game.arxiu.length > 0">
+                <strong>Últimes partides:</strong>
+                <ul>
+                    <li *ngFor="let session of game.arxiu.slice(-2)">{{ session }}</li>
+                </ul>
+            </div>
+        </div>
 
-        @if (game.arxiu.length > 2) {
-        <small>... y {{ game.arxiu.length - 2 }} más</small>
-        }
+        <div class="element-footer">
+            <span class="element-preu">{{ game.preu | number:'1.2-2' }}€</span>
+            <span class="element-stock" [class.baix-stock]="game.unitats < 20">
+                Stock: {{ game.unitats }}
+            </span>
+        </div>
     </div>
-    }
-
 </div>

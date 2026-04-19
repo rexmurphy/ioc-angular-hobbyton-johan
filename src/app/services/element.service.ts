@@ -84,15 +84,14 @@ export class ElementService {
     /**
      * Comprova si un codi d'element està disponible (per validació asíncrona)
      */
-    codiDisponible(codi: string): Promise<boolean> {
+    codiDisponible(terme: string): Promise<boolean> {
         return new Promise((resolve) => {
-            setTimeout(() => {
-                this.http.get<ElementApiResponse[]>(`${this.apiUrl}/elements?id=${codi}`)
-                    .subscribe({
-                        next: (elements) => resolve(elements.length === 0),
-                        error: () => resolve(false)
-                    });
-            }, 500);  // Simula latència de validació
+            this.http.get<ElementApiResponse[]>(`${this.apiUrl}/elements?q=${terme}`)
+                .subscribe({
+                    // Retornem true si NO hi ha resultats (està "disponible" o buit)
+                    next: (elements) => resolve(elements.length === 0),
+                    error: () => resolve(true)
+                });
         });
     }
 

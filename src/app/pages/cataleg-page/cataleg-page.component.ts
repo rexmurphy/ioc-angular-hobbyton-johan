@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ElementService } from '../../services/element.service';
+import { FormulariCercaComponent } from '../../components/formulari-cerca/formulari-cerca.component';
+import { TargetaElementComponent } from "../../components/targeta-element/targeta-element.component";
 
 @Component({
   selector: 'app-cataleg-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormulariCercaComponent, TargetaElementComponent],
   templateUrl: './cataleg-page.component.html',
   styleUrl: './cataleg-page.component.scss'
 })
