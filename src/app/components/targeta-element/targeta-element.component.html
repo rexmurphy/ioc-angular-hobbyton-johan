@@ -1,10 +1,13 @@
 <div class="element-card">
     <img [src]="game.imatgeUrl" [alt]="game.titol" class="element-imatge">
+    <button class="btn-preferit" [class.actiu]="preferitsService.esPreferit(game.id)" (click)="togglePreferit(game)">
+        {{ preferitsService.esPreferit(game.id) ? '★' : '☆' }}
+    </button>
     <div class="element-info">
         <h3 class="element-nom">{{ game.titol }}</h3>
         <p class="element-categoria">{{ game.categoria }}</p>
         <p class="element-descripcio">{{ game.descripcio }}</p>
-        
+
         <div class="element-detalls">
             <p><strong>Jugadors:</strong> {{ formatPlayers(game) }}</p>
             <div class="play-history" *ngIf="game.arxiu && game.arxiu.length > 0">

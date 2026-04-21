@@ -1,17 +1,22 @@
 .element-card {
-  background-color: white;
+  position: relative;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+
+
 
   .element-imatge {
     width: 100%;
@@ -19,41 +24,84 @@
     object-fit: cover;
   }
 
+
+
+
+  .btn-preferit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    border: 2px solid #f1c40f;
+    color: #f1c40f;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+
+    &:hover {
+      background-color: #f1c40f;
+      color: white;
+    }
+
+    &.actiu {
+      background-color: #f1c40f;
+      color: white;
+    }
+  }
+
   .element-info {
-    padding: 1rem;
+    padding: 15px;
     flex: 1;
     display: flex;
     flex-direction: column;
 
     .element-nom {
-      margin: 0 0 0.5rem;
+      margin: 0 0 5px 0;
       font-size: 1.2rem;
-      color: #333;
+      color: #2c3e50;
     }
 
     .element-categoria {
-      margin: 0 0 0.75rem;
+      margin: 0 0 10px 0;
       font-size: 0.9rem;
       color: #3498db;
-      font-weight: 600;
+      font-weight: bold;
     }
 
     .element-descripcio {
-      margin: 0 0 1rem;
+      margin-bottom: 15px;
       color: #666;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       line-height: 1.4;
     }
 
     .element-detalls {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
-        
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+
+      p {
+        margin: 0 0 5px 0;
+      }
+
+      .play-history {
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+        padding-top: 5px;
+
         ul {
-            margin: 5px 0;
-            padding-left: 1.2rem;
-            color: #777;
+          margin: 5px 0 0 15px;
+          padding: 0;
+          color: #777;
         }
+      }
     }
 
     .element-footer {
@@ -61,25 +109,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 0.75rem;
+      padding-top: 10px;
       border-top: 1px solid #eee;
 
       .element-preu {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: bold;
         color: #27ae60;
+
+        &::after {
+          content: '€';
+        }
       }
 
       .element-stock {
-        font-size: 0.9rem;
-        color: #666;
-        padding: 0.25rem 0.5rem;
-        background-color: #ecf0f1;
-        border-radius: 4px;
+        font-size: 0.8rem;
+        color: #999;
 
         &.baix-stock {
-          background-color: #ffe6e6;
           color: #e74c3c;
+          font-weight: bold;
         }
       }
     }

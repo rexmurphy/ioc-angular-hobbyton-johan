@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { PreferitsService } from '../../services/preferits.service';
 import { TargetaElementComponent } from './targeta-element.component';
 
 describe('TargetaElementComponent', () => {
@@ -8,9 +8,10 @@ describe('TargetaElementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TargetaElementComponent]
+      imports: [TargetaElementComponent],
+      providers: [PreferitsService]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TargetaElementComponent);
     component = fixture.componentInstance;
