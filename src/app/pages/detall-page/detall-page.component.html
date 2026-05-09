@@ -1,0 +1,14 @@
+<div class="detall-container" style="padding: 20px;">
+    @if(elementSeleccionat){
+    <h2>{{ elementSeleccionat.titol }}</h2>
+    <img [src]="elementSeleccionat.imatgeUrl" [alt]="elementSeleccionat.titol" style="max-width: 200px;">
+    <p><strong>Categoria:</strong> {{ elementSeleccionat.categoria }}</p>
+    <p><strong>Preu:</strong> {{ elementSeleccionat.preu }} €</p>
+    <p><strong>Jugadors:</strong> De {{ elementSeleccionat.minJugadors }} a {{ elementSeleccionat.maxJugadors }}</p>
+    <p><strong>Descripció:</strong> {{ elementSeleccionat.descripcio }}</p>
+    }
+
+    @else {
+    <p> No has accedit a cap joc de taula per l'enllaç </p>
+    }
+</div>

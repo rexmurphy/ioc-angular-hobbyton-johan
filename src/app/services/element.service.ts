@@ -1,10 +1,10 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { ElementCataleg, ElementApiResponse, EstatServei } from '../models/element.model';
-import { adaptarElementsApi } from '../adaptadors/element.adaptador';
+import { adaptarElementsApi, adaptarElementApi } from '../adaptadors/element.adaptador';
 import { environment } from '../../environments/environments';
 
 
@@ -124,5 +124,14 @@ export class ElementService {
             default:
                 return `Error desconegut (${error.status}): ${error.message}`;
         }
+    }
+    /**
+     * Obtenir un element especific per la seva Id
+     */
+    obtenirElementPerId(id: string): Observable<ElementCataleg> {
+        return this.http.get<ElementApiResponse>(`${this.apiUrl}/elements/${id}`)
+            .pipe(
+                map(adaptarElementApi)
+            )
     }
 }
