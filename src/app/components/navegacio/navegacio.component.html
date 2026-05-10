@@ -3,7 +3,13 @@
         <li><a routerLink="/cataleg" routerLinkActive="active">Catàleg</a></li>
         <li><a routerLink="/cerca" routerLinkActive="active">Cerca</a></li>
         <li><a routerLink="/detall/:id" routerLinkActive="active">Detall</a></li>
-        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li *ngIf="usuariActual$ | async as usuari; else loginLink">
+            <span>Hola, {{ usuari.nom }}</span> | 
+            <a href="#" (click)="$event.preventDefault(); logout()">Tancar sessió</a>
+        </li>
+        <ng-template #loginLink>
+            <li><a routerLink="/login" routerLinkActive="active">Iniciar sessió</a></li>
+        </ng-template>
         <li><a routerLink="/preferits" routerLinkActive="active">Preferits</a></li>
     </ul>
 </nav>

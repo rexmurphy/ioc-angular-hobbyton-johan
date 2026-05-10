@@ -3,7 +3,7 @@ import { CatalegPageComponent } from './pages/cataleg-page/cataleg-page.componen
 import { CercaPageComponent } from './pages/cerca-page/cerca-page.component';
 import { DetallPageComponent } from './pages/detall-page/detall-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { PreferitsPageComponent } from './pages/preferits-page/preferits-page.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     // Redireccio per defecte qua s'accedeix a l'app
@@ -14,7 +14,11 @@ export const routes: Routes = [
     { path: 'cerca', component: CercaPageComponent },
     { path: 'detall/:id', component: DetallPageComponent },
     { path: 'login', component: LoginPageComponent },
-    { path: 'preferits', component: PreferitsPageComponent },
+    { 
+        path: 'preferits', 
+        loadComponent: () => import('./pages/preferits-page/preferits-page.component').then(m => m.PreferitsPageComponent), 
+        canActivate: [authGuard] 
+    },
 
     //Ruta wildcard (ruta no reconeguda)
     { path: '**', redirectTo: 'cataleg' }

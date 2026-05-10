@@ -1,1 +1,13 @@
-<p>preferits-page works!</p>
+<div class="preferits-page">
+    <h2>Els meus preferits ({{ preferitsService.totalPreferits() }})</h2>
+
+    <div class="sense-resultats" *ngIf="preferitsService.totalPreferits() === 0">
+        <p>Encara no has afegit cap element als teus preferits.</p>
+    </div>
+
+    <div class="elements-grid">
+        @for (game of preferitsService.preferits(); track game.id) {
+            <app-targeta-element [game]="game"></app-targeta-element>
+        }
+    </div>
+</div>

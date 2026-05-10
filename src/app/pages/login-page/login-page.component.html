@@ -1,1 +1,28 @@
-<p>login-page works!</p>
+<div class="login-container">
+  <h2>Iniciar Sessió</h2>
+  
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">Correu electrònic:</label>
+      <input type="email" id="email" formControlName="email" placeholder="admin@test.com">
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']">El correu és obligatori.</small>
+        <small *ngIf="loginForm.get('email')?.errors?.['email']">Format de correu invàlid.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Contrasenya:</label>
+      <input type="password" id="password" formControlName="password" placeholder="1234">
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']">La contrasenya és obligatòria.</small>
+      </div>
+    </div>
+
+    <div *ngIf="loginError" class="error-message global-error">
+      Credencials incorrectes.
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+  </form>
+</div>
