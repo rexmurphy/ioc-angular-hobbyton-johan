@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ElementService } from '../../services/element.service';
-import { PreferitsService } from '../../services/preferits.service';
-import { FormulariCercaComponent } from '../../components/formulari-cerca/formulari-cerca.component';
 import { TargetaElementComponent } from "../../components/targeta-element/targeta-element.component";
 
 @Component({
   selector: 'app-cataleg-page',
   standalone: true,
-  imports: [CommonModule, FormulariCercaComponent, TargetaElementComponent],
+  imports: [CommonModule, TargetaElementComponent, ScrollingModule],
   templateUrl: './cataleg-page.component.html',
   styleUrl: './cataleg-page.component.scss'
 })
 export class CatalegPageComponent implements OnInit {
   constructor(
-    public elementService: ElementService,
-    public preferitsService: PreferitsService
+    public elementService: ElementService
   ) { }
 
   ngOnInit(): void {

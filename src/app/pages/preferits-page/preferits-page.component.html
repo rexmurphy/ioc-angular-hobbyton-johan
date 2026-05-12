@@ -1,6 +1,16 @@
 <div class="preferits-page">
     <h2>Els meus preferits ({{ preferitsService.totalPreferits() }})</h2>
 
+    <!-- Panell de Preferits (Llista ràpida) -->
+    <div class="panell-preferits" *ngIf="preferitsService.totalPreferits() > 0" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+        <h3 style="margin-top: 0;">Llista ràpida:</h3>
+        <ul class="llista-mini-preferits">
+            <li *ngFor="let pref of preferitsService.preferits()">
+                {{ pref.titol }}
+            </li>
+        </ul>
+    </div>
+
     <div class="sense-resultats" *ngIf="preferitsService.totalPreferits() === 0">
         <p>Encara no has afegit cap element als teus preferits.</p>
     </div>

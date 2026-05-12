@@ -1,1 +1,40 @@
-<p>cerca-page works!</p>
+<div class="cerca-page" style="padding: 20px;">
+    <header class="page-header">
+        <h1>Cercador de jocs de taula</h1>
+    </header>
+
+    <app-formulari-cerca></app-formulari-cerca>
+
+    <!-- Estat: Carregant -->
+    <div class="estat-carregant" *ngIf="elementService.estat() === 'carregant'">
+        <div class="spinner"></div>
+        <p>Cercant elements...</p>
+    </div>
+
+    <!-- Estat: Error -->
+    <div class="estat-error" *ngIf="elementService.estat() === 'error'">
+        <div class="error-icon">⚠️</div>
+        <h2>Error al cercar elements</h2>
+        <p class="error-missatge">{{ elementService.error() }}</p>
+    </div>
+
+    <!-- Estat: Èxit (elements carregats) -->
+    <div class="estat-exit" *ngIf="elementService.estat() === 'exit'">
+        <!-- Missatge si no hi ha elements -->
+        <div class="sense-resultats" *ngIf="elementService.elements().length === 0">
+            <p>No s'han trobat elements</p>
+        </div>
+
+        <!-- Llistat d'elements -->
+        <div class="elements-grid">
+            @for (game of elementService.elements(); track game.id) {
+            <app-targeta-element [game]="game"></app-targeta-element>
+            }
+        </div>
+    </div>
+
+    <!-- Estat: Inicial -->
+    <div class="estat-inicial" *ngIf="elementService.estat() === 'inicial'">
+        <p>Introdueix un terme per començar la cerca...</p>
+    </div>
+</div>

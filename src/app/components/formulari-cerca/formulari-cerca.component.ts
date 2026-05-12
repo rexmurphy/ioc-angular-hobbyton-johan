@@ -49,7 +49,7 @@ export class FormulariCercaComponent implements OnInit {
 
   netejar(): void {
     this.formulariCerca.reset();
-    this.elementService.obtenirPopulars();
+    this.elementService.reiniciar();
   }
 
   get estaValidant(): boolean {

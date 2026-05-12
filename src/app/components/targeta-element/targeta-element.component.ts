@@ -1,32 +1,22 @@
-import { Component, Input } from '@angular/core';
-import { UpperCasePipe, CommonModule, DecimalPipe } from '@angular/common';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule, DecimalPipe } from '@angular/common';
+import { Router } from '@angular/router';
 import { ElementCataleg } from '../../models/element.model';
-import { PreferitsService } from '../../services/preferits.service';
 
 @Component({
   selector: 'app-targeta-element',
   standalone: true,
   imports: [CommonModule, DecimalPipe],
   templateUrl: './targeta-element.component.html',
-  styleUrl: './targeta-element.component.scss'
+  styleUrl: './targeta-element.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TargetaElementComponent {
   @Input({ required: true }) game!: ElementCataleg;
 
-  constructor(public preferitsService: PreferitsService) { }
+  constructor(private router: Router) { }
 
-  formatPlayers(game: ElementCataleg): string {
-    if (game.minJugadors === game.maxJugadors) {
-      return `${game.minJugadors}`;
-    }
-    return `${game.minJugadors} - ${game.maxJugadors}`;
-  }
-
-  togglePreferit(element: ElementCataleg): void {
-    if (this.preferitsService.esPreferit(element.id)) {
-      this.preferitsService.eliminarPreferit(element.id);
-    } else {
-      this.preferitsService.afegirPreferit(element);
-    }
+  veureDetall(): void {
+    this.router.navigate(['/detall', this.game.id]);
   }
 }

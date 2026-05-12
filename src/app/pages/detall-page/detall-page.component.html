@@ -1,11 +1,28 @@
 <div class="detall-container" style="padding: 20px;">
     @if(elementSeleccionat){
     <h2>{{ elementSeleccionat.titol }}</h2>
-    <img [src]="elementSeleccionat.imatgeUrl" [alt]="elementSeleccionat.titol" style="max-width: 200px;">
+    
+    <button class="btn-preferit" style="margin-bottom: 20px; padding: 5px 10px; cursor: pointer; font-size: 1.2rem; background: none; border: 1px solid #ccc; border-radius: 4px;" [class.actiu]="preferitsService.esPreferit(elementSeleccionat.id)" (click)="togglePreferit(elementSeleccionat)">
+        <span style="color: gold;">{{ preferitsService.esPreferit(elementSeleccionat.id) ? '★' : '☆' }}</span> 
+        {{ preferitsService.esPreferit(elementSeleccionat.id) ? 'Eliminar de preferits' : 'Afegir a preferits' }}
+    </button>
+
+    <div>
+        <img [src]="elementSeleccionat.imatgeUrl" [alt]="elementSeleccionat.titol" style="max-width: 300px; display: block; margin-bottom: 20px;">
+    </div>
+    
     <p><strong>Categoria:</strong> {{ elementSeleccionat.categoria }}</p>
+    <p><strong>Descripció:</strong> {{ elementSeleccionat.descripcio }}</p>
     <p><strong>Preu:</strong> {{ elementSeleccionat.preu }} €</p>
     <p><strong>Jugadors:</strong> De {{ elementSeleccionat.minJugadors }} a {{ elementSeleccionat.maxJugadors }}</p>
-    <p><strong>Descripció:</strong> {{ elementSeleccionat.descripcio }}</p>
+    <p><strong>Stock:</strong> {{ elementSeleccionat.unitats }} unitats</p>
+
+    <div class="play-history" *ngIf="elementSeleccionat.arxiu && elementSeleccionat.arxiu.length > 0" style="margin-top: 20px;">
+        <strong>Historial de partides:</strong>
+        <ul>
+            <li *ngFor="let session of elementSeleccionat.arxiu">{{ session }}</li>
+        </ul>
+    </div>
     }
 
     @else {

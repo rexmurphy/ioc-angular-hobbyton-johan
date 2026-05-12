@@ -2,18 +2,9 @@
     <header class="page-header">
         <h1>Llistat dels meus jocs de taula</h1>
 
-        <!-- Panell de Preferits segons-->
-        <div class="panell-preferits" *ngIf="preferitsService.totalPreferits() > 0">
-            <h3>Els meus preferits ({{ preferitsService.totalPreferits() }})</h3>
-            <ul class="llista-mini-preferits">
-                <li *ngFor="let pref of preferitsService.preferits()">
-                    {{ pref.titol }}
-                </li>
-            </ul>
-        </div>
     </header>
 
-    <app-formulari-cerca></app-formulari-cerca>
+
 
     <!-- Estat: Carregant -->
     <div class="estat-carregant" *ngIf="elementService.estat() === 'carregant'">
@@ -38,12 +29,12 @@
             <p>No s'han trobat elements</p>
         </div>
 
-        <!-- Llistat d'elements -->
-        <div class="elements-grid">
-            @for (game of elementService.elements(); track game.id) {
-            <app-targeta-element [game]="game"></app-targeta-element>
-            }
-        </div>
+        <!-- Llistat d'elements virtualitzat -->
+        <cdk-virtual-scroll-viewport [itemSize]="380" style="height: 700px; width: 100%;">
+            <div *cdkVirtualFor="let game of elementService.elements()" style="display: flex; justify-content: center; padding-bottom: 20px;">
+                <app-targeta-element [game]="game" style="width: 100%; max-width: 400px;"></app-targeta-element>
+            </div>
+        </cdk-virtual-scroll-viewport>
     </div>
 
     <!-- Estat: Inicial -->
